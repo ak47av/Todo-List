@@ -2,10 +2,10 @@ package tasks
 
 import (
 	"encoding/json"
-	"todo_CLI/errors"
 	"fmt"
 	"io/ioutil"
 	"reflect"
+	"todo_CLI/errors"
 )
 
 type Task struct {
@@ -19,11 +19,11 @@ type List struct {
 }
 
 type JsonTask struct {
-	Priority int `json:"priority"`
-	Data string `json:"task"`
+	Priority int    `json:"priority"`
+	Data     string `json:"task"`
 }
 
-func (L *List) Insert(data string, priority int) (error) {
+func (L *List) Insert(data string, priority int) error {
 
 	if reflect.TypeOf(data).String() != "string" {
 		return errors.New("Enter a String")
@@ -45,25 +45,25 @@ func (L *List) Insert(data string, priority int) (error) {
 			curr = curr.next
 		}
 		temp.next = curr.next
-		curr.next = temp	
+		curr.next = temp
 	}
 	return nil
 }
 
-func (L *List) Delete(index int) (error) {
-	if(index == 1){
+func (L *List) Delete(index int) error {
+	if index == 1 {
 		L.head = L.head.next
-	} else if index<=0{
+	} else if index <= 0 {
 		return errors.New("Enter a positive index")
 	} else {
 		curr := L.head
-		for i:=2; i< index; i++ {
-			if(curr.next != nil){
+		for i := 2; i < index; i++ {
+			if curr.next != nil {
 				curr = curr.next
 			}
-			if(i < index){
-				return nil
-			} 
+		}
+		if curr.next == nil {
+			return nil
 		}
 		curr.next = curr.next.next
 	}
@@ -86,9 +86,9 @@ func (L *List) ToJSONFile() {
 	newList := []JsonTask{}
 	datum := JsonTask{}
 	for task != nil {
-		datum = JsonTask {
+		datum = JsonTask{
 			Priority: task.priority,
-			Data: task.data,
+			Data:     task.data,
 		}
 		newList = append(newList, datum)
 		task = task.next
