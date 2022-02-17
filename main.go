@@ -9,7 +9,7 @@ import (
 	//"os"
 )
 
-func readJSON() {
+func readJSON() (*tasks.List){
 	byteValue, err := ioutil.ReadFile("tasks.json")
 	if err!=nil {
 		log.Fatal(err)
@@ -24,9 +24,10 @@ func readJSON() {
 			log.Fatal(err)
 		}
 	}
-	newList.Display()
+	return newList
 }
 
 func main() {
-	readJSON()
+	newList := readJSON()
+	newList.Display()
 }
