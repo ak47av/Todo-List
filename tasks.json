@@ -1,0 +1,18 @@
+[
+  {
+    "priority": 2,
+    "task": "Get an Orange"
+  },
+  {
+    "priority": 2,
+    "task": "Get a Banana"
+  },
+  {
+    "priority": 1,
+    "task": "Get a Kiwi"
+  },
+  {
+    "priority": 3,
+    "task": "Get an Apple"
+  }
+]
