@@ -2,7 +2,7 @@ package tasks
 
 import (
 	"encoding/json"
-	"errors"
+	"todo_CLI/errors"
 	"fmt"
 	"io/ioutil"
 	// "log"
@@ -24,7 +24,6 @@ type JsonTask struct {
 	Priority int `json:"priority"`
 	Data string `json:"task"`
 }
-
 
 func (L *List) Insert(data string, priority int) (error) {
 
