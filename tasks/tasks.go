@@ -5,8 +5,6 @@ import (
 	"todo_CLI/errors"
 	"fmt"
 	"io/ioutil"
-	// "log"
-	// "os"
 	"reflect"
 )
 
@@ -56,13 +54,16 @@ func (L *List) Delete(index int) (error) {
 	if(index == 1){
 		L.head = L.head.next
 	} else if index<=0{
-		return errors.New("Enter a positive index to")
+		return errors.New("Enter a positive index")
 	} else {
 		curr := L.head
 		for i:=2; i< index; i++ {
 			if(curr.next != nil){
 				curr = curr.next
 			}
+			if(i < index){
+				return nil
+			} 
 		}
 		curr.next = curr.next.next
 	}

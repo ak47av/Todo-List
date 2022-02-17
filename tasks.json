@@ -4,19 +4,7 @@
     "task": "Get a Kiwi"
   },
   {
-    "priority": 1,
-    "task": "Go to LalaLAND"
-  },
-  {
-    "priority": 2,
-    "task": "Get a Tangerine"
-  },
-  {
     "priority": 2,
     "task": "Get a Banana"
-  },
-  {
-    "priority": 3,
-    "task": "Get an Apple"
   }
 ]

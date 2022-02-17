@@ -1,11 +1,12 @@
 package JSON
 
 import (
-	"todo_CLI/tasks"
-	"log"
-	"io/ioutil"
 	"encoding/json"
-)	
+	"io/ioutil"
+	"log"
+	"todo_CLI/tasks"
+)
+
 func JSONtoTask() *tasks.List {
 	taskObjects := ReadJSON()
 	newList := &tasks.List{}
@@ -18,7 +19,7 @@ func JSONtoTask() *tasks.List {
 	return newList
 }
 
-func ReadJSON() []tasks.JsonTask{
+func ReadJSON() []tasks.JsonTask {
 	byteValue, err := ioutil.ReadFile("tasks.json")
 	if err != nil {
 		log.Fatal(err)
