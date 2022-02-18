@@ -12,5 +12,5 @@ func main() {
 	router.GET("/tasks", api.GetTasks)
 	router.POST("/tasks", api.PostTask)
 	router.DELETE("/tasks/:id", api.DeleteTaskByID)
-	router.Run("localhost:8080")
+	router.Run(":8080")
 }
